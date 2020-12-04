@@ -93,8 +93,14 @@ namespace ImageResizer.AspNetCore
 
             // if we got this far, resize it
             _logger.LogInformation($"Resizing {path.Value} with params {resizeParams}");
+            //update the path to deal with ";"
+            var pathValue = path.Value;
+            if (pathValue.Contains(";"))
+            {
+                pathValue = pathValue.Split(';')[0];
+            }
             var provider = new PhysicalFileProvider(rootPath);
-            var imagePath = provider.GetFileInfo(path.Value).PhysicalPath; 
+            var imagePath = provider.GetFileInfo(pathValue).PhysicalPath; 
             //// get the image location on disk
             //var imagePath = Path.Combine(
             //    rootPath.Replace("\\wwwroot", ""),
