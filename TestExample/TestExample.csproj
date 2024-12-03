@@ -1,16 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
-
   <PropertyGroup>
-    <TargetFrameworks>net7.0</TargetFrameworks>
+    <TargetFrameworks>net9.0</TargetFrameworks>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="SkiaSharp" Version="2.88.9" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\ImageResizer.AspNetCore\ImageResizer.AspNetCore.csproj" />
   </ItemGroup>
-
-
 </Project>
